@@ -1,0 +1,11 @@
+class LeeJY:
+    def __init__(self):
+        self.cntCompany = 10
+    def hit(self, first):
+        self.cntCompany += punch
+
+class Biden:
+    
+    
+    
+class Musk:

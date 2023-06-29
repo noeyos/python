@@ -1,0 +1,94 @@
+from PyQt5 import QtWidgets, uic
+import sys
+from random import random
+from PyQt5.QtWidgets import QMessageBox
+form_window = uic.loadUiType("myqt08.ui")[0]
+
+class UiMainWindow(QtWidgets.QMainWindow, form_window):
+    
+    com = ""
+    mine = ""
+    
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+        self.show()
+        self.randomBall()
+        self.pb.clicked.connect(self.playGame)
+    
+    def playGame(self):
+        self.mine = self.le.text()
+        print(self.mine)
+        self.s = self.strike()
+        print(self.s)
+        self.b = self.ball()
+        print(self.b)
+        
+        self.str_old = self.te.text()
+        self.str_new = self.mine + "   " + str(self.s) + "s" + str(self.b) + "b" + "\n"
+        
+        self.te.setText(self.str_new + self.str_old)
+        self.le.clear()
+        
+        if self.s==3 :
+            QMessageBox.about(self, '야구', '스트라이크!!!')
+    
+    def randomBall(self):
+        arr = ["1","2","3","4","5","6","7","8","9"]
+    
+        for i in range(100):
+            r = int(random() * 9)
+            a = arr[0]
+            arr[0] = arr[r]
+            arr[r] = a
+            
+        self.com = arr[0] + arr[1] + arr[2]
+        print(self.com)
+        
+    def strike(self):
+        ret = 0
+        
+        c1 = self.com[0:1]
+        c2 = self.com[1:2]
+        c3 = self.com[2:3]
+        
+        m1 = self.mine[0:1]
+        m2 = self.mine[1:2]
+        m3 = self.mine[2:3]
+        
+        if c1 == m1:
+            ret += 1
+        if c2 == m2:
+            ret += 1
+        if c3 == m3:
+            ret += 1
+             
+        return ret;
+        
+        
+    def ball(self):
+        ret = 0
+        
+        c1 = self.com[0:1]
+        c2 = self.com[1:2]
+        c3 = self.com[2:3]
+    
+        m1 = self.mine[0:1]
+        m2 = self.mine[1:2]
+        m3 = self.mine[2:3]
+        
+        if c1 == m2 or c1 == m3:
+            ret += 1
+        if c2 == m1 or c2 == m3:
+            ret += 1
+        if c3 == m1 or c3 == m2:
+            ret += 1
+            
+        return ret;
+        
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    main_window = UiMainWindow()
+    sys.exit(app.exec_())
+
+    

@@ -1,0 +1,17 @@
+class LeeJY:
+    def __init__(self):
+        self.cntCompany = 10
+    def hit(self, punch):
+        self.cntCompany += punch
+
+class Biden:
+    def __init__(self):
+        self.headColor = "white"
+    def dye(self):
+        self.headColor += "red"
+
+class Musk:
+    def __init__(self):
+        self.cntSat = 1000
+    def launch(self):
+        self.cntSat += 10
