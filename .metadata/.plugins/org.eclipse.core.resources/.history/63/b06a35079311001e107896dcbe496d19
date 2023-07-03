@@ -1,9 +1,0 @@
-package day03;
-
-public class vehicle {
-	int wheelCount = 2;
-	
-	public void flex() {
-		wheelCount = 4;
-	}
-}

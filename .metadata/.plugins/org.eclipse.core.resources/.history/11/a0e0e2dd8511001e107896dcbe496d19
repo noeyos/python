@@ -1,6 +1,0 @@
-package day03;
-
-public class Animal {
-	boolean flag_sound = true;
-	
-}
