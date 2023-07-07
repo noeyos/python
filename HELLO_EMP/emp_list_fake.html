@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<th>사번</th>
+		<th>이름</th>
+		<th>성별</th>
+		<th>주소</th>
+	</tr>
+	
+    <tr>
+        <td><a href="emp_detail?e_id=1">1</a></td>
+        <td>핑핑이</td>
+        <td>m</td>
+        <td>바다1</td>
+    </tr>
+    
+    <tr>
+        <td><a href="emp_detail?e_id=2">2</a></td>
+        <td>스폰지밥</td>
+        <td>m</td>
+        <td>파인애플집1</td>
+    </tr>
+    
+    <tr>
+        <td><a href="emp_detail?e_id=3">3</a></td>
+        <td>뚱이</td>
+        <td>m</td>
+        <td>돌밑1</td>
+    </tr>
+    
+    <tr>
+        <td><a href="emp_detail?e_id=4">4</a></td>
+        <td>징징이</td>
+        <td>m</td>
+        <td>돌집1</td>
+    </tr>
+    
+    <tr>
+        <td><a href="emp_detail?e_id=5">5</a></td>
+        <td>소연</td>
+        <td>f</td>
+        <td>대전1</td>
+    </tr>   
+</table>
+
+<table class="real" border="1">
+	<tr>
+		<th>사번</th>
+		<th>이름</th>
+		<th>성별</th>
+		<th>주소</th>
+	</tr>
+	{% for item in emp %}
+    <tr>
+        <td><a href="emp_detail?e_id={{item.e_id}}">{{ item.e_id }}</a></td>
+        <td>{{ item.e_name }}</td>
+        <td>{{ item.gen }}</td>
+        <td>{{ item.addr }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<table border="1">
+	<tr>
+		<th>사번</th>
+		<th>이름</th>
+		<th>성별</th>
+		<th>주소</th>
+	</tr>
+	
+    <tr>
+        <td><a href="emp_detail?e_id=1">1</a></td>
+        <td>핑핑이</td>
+        <td>m</td>
+        <td>바다1</td>
+    </tr>
+    
+    <tr>
+        <td><a href="emp_detail?e_id=2">2</a></td>
+        <td>스폰지밥</td>
+        <td>m</td>
+        <td>파인애플집1</td>
+    </tr>
+    
+    <tr>
+        <td><a href="emp_detail?e_id=3">3</a></td>
+        <td>뚱이</td>
+        <td>m</td>
+        <td>돌밑1</td>
+    </tr>
+    
+    <tr>
+        <td><a href="emp_detail?e_id=4">4</a></td>
+        <td>징징이</td>
+        <td>m</td>
+        <td>돌집1</td>
+    </tr>
+    
+    <tr>
+        <td><a href="emp_detail?e_id=5">5</a></td>
+        <td>소연</td>
+        <td>f</td>
+        <td>대전1</td>
+    </tr>
+</table>
+
+	<br>
+    <input type="button" value="추가하기" onclick="fn_add()">
+<script>
+function fn_add() {
+	location.href="emp_add"
+}
+</script>
+</body>
+</html>

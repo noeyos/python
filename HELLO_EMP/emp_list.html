@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<th>사번</th>
+		<th>이름</th>
+		<th>성별</th>
+		<th>주소</th>
+	</tr>
+	{% for item in emp %}
+    <tr>
+        <td><a href="emp_detail?e_id={{item.e_id}}">{{ item.e_id }}</a></td>
+        <td>{{ item.e_name }}</td>
+        <td>{{ item.gen }}</td>
+        <td>{{ item.addr }}</td>
+    </tr>
+    {% endfor %}
+</table>
+	<br>
+    <input type="button" value="추가하기" onclick="fn_add()">
+<script>
+function fn_add() {
+	location.href="emp_add"
+}
+</script>
+</body>
+</html>

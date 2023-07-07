@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+emp_add_act
+
+<script>
+cnt = "{{cnt}}"
+if(cnt == 1) {
+	alert("정상적으로 등록 되었습니다")
+	location.href = "emp_list"
+} else {
+	alert("등록 도중 문제가 발생했습니다")
+	history.back()
+}
+</script>
+</body>
+</html>

@@ -6,18 +6,38 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="pb"/>
+		<item key="selection" value="삼성전자"/>
 		<list key="findhistory">
-			<item value="btn"/>
-			<item value="로또"/>
+			<item value="삼성전자"/>
+			<item value="LANGUAGE_CODE = &apos;ko-kr&apos;"/>
+			<item value="LANGUAGE_CODE"/>
+			<item value="emp"/>
+			<item value="addr"/>
+			<item value="gen"/>
+			<item value="e_name"/>
+			<item value="e_id"/>
+			<item value="de"/>
+			<item value="HELLO_DJANGO"/>
+			<item value="django"/>
+			<item value="board"/>
+			<item value="append"/>
+			<item value="arr2D"/>
+			<item value="flag"/>
 		</list>
 		<list key="replacehistory">
+			<item value="mem"/>
+			<item value="address"/>
+			<item value="tel"/>
+			<item value="m_nm"/>
+			<item value="m_id"/>
+			<item value="dm"/>
+			<item value=""/>
 			<item value="pb"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="-23"/>
-		<item key="DIALOG_Y_ORIGIN" value="401"/>
+		<item key="DIALOG_X_ORIGIN" value="-217"/>
+		<item key="DIALOG_Y_ORIGIN" value="381"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
