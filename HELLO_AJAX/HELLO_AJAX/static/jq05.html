@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<style>
+#it {
+	text-align:right;
+}
+
+table {
+	text-align: center;
+}
+
+.btn {
+	width: 40px;
+}
+
+#callbtn {
+	width: 100px;
+}
+
+input {
+	height:50px;
+	border: none;
+	background: none;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+</style>
+<body>
+	<h2>ex05</h2>
+	<table border="1">
+		<tr>
+			<td colspan="3">
+				<input type="text" id="it" />
+			</td>
+		</tr>
+		<tr>
+			<td><input class="btn" type="button" value="1" /></td>
+			<td><input class="btn" type="button" value="2" /></td>
+			<td><input class="btn" type="button" value="3" /></td>
+		</tr>
+		<tr>
+			<td><input class="btn" type="button" value="4" /></td>
+			<td><input class="btn" type="button" value="5" /></td>
+			<td><input class="btn" type="button" value="6" /></td>
+		</tr>
+		<tr>
+			<td><input class="btn" type="button" value="7" /></td>
+			<td><input class="btn" type="button" value="8" /></td>
+			<td><input class="btn" type="button" value="9" /></td>
+		</tr>
+		<tr>
+			<td><input class="btn" type="button" value="0" /></td>
+			<td colspan="2">
+				<input type="button" value="call" id="callbtn" onclick="mycall()">
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+	var res = "";
+	var btn = $(".btn");
+	btn.click(function(){
+		var num = $(this).val();
+		res += num;
+		console.log("num:"+num);
+		console.log("res:"+res);
+		$("#it").val(res)
+	})
+
+	function mycall() {
+		alert(res + "에 전화 거는 중...");
+	}
+	</script>
+</body>
+</html>

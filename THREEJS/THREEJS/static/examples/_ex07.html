@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>three.js webgl - geometry - cube</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+	<!-- Import maps polyfill -->
+	<!-- Remove this when import maps will be widely supported -->
+	<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+	<script type="importmap">
+         {
+            "imports": {
+               "three": "../build/three.module.js",
+               "three/addons/": "./jsm/"
+            }
+         }
+      </script>
+
+	<script type="module">
+
+		import * as THREE from 'three';
+
+		let camera, scene, renderer;
+		let sun, earth, moon;
+
+		init();
+		animate();
+
+		function init() {
+
+			camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000); // 시야각 수정
+			camera.position.z = 2;
+
+			scene = new THREE.Scene();
+
+			const tt_sun = new THREE.TextureLoader().load('textures/space/sun.jpg');
+			const tt_earth = new THREE.TextureLoader().load('textures/space/earth_day.jpg');
+			const tt_moon = new THREE.TextureLoader().load('textures/space/moon.jpg');
+			tt_sun.colorSpace = THREE.SRGBColorSpace;
+			tt_earth.colorSpace = THREE.SRGBColorSpace;
+			tt_moon.colorSpace = THREE.SRGBColorSpace;
+
+			const g_sum = new THREE.SphereGeometry(20, 50, 16);
+			const g_earth = new THREE.SphereGeometry(10, 50, 16);
+			const g_moon = new THREE.SphereGeometry(3, 50, 16);
+			const m_sum = new THREE.MeshBasicMaterial({map: tt_sun});
+			const m_earth = new THREE.MeshBasicMaterial({map: tt_earth});
+			const m_moon = new THREE.MeshBasicMaterial({map: tt_moon});
+			sun = new THREE.Mesh(g_sum, m_sum);
+			earth = new THREE.Mesh(g_earth, m_earth);
+			moon = new THREE.Mesh(g_moon, m_moon);
+
+
+			scene.add(sun);
+			scene.add(earth);
+			scene.add(moon);
+
+			renderer = new THREE.WebGLRenderer({antialias: true});
+			renderer.setPixelRatio(window.devicePixelRatio);
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+
+			//
+
+			window.addEventListener('resize', onWindowResize);
+
+		}
+
+		// 화면 가운데로 오게 해주는 명령어
+		function onWindowResize() {
+
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+
+			renderer.setSize(window.innerWidth, window.innerHeight);
+
+		}
+
+
+		var r = 200;
+		var rr = 30;
+		var t = 0;
+		var tt = 0;
+		var cnt = 0;
+		function animate() {
+
+			requestAnimationFrame(animate);
+
+
+			camera.position.z = 500;
+			camera.position.y = 10;
+
+			moon.position.x = earth.position.x + rr * Math.cos(tt);
+			moon.position.y = earth.position.y + rr * Math.sin(tt);
+
+			earth.position.x = r * Math.cos(t);
+			earth.position.y = r * Math.sin(t);
+
+			earth.rotation.x += 0.01;
+			earth.rotation.y += 0.01;
+
+			sun.rotation.x += 0.01;
+			sun.rotation.y += 0.01;
+			
+			camera.lookAt(moon.position);
+			
+			// renderer => 그림을 그려주는 놈
+			renderer.render(scene, camera);
+
+			t += 0.01;
+			tt += 0.1;
+		}
+
+
+	</script>
+
+</body>
+
+</html>

@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="삼성전자"/>
+		<item key="selection" value="mesh"/>
 		<list key="findhistory">
+			<item value="mesh"/>
+			<item value="mash"/>
+			<item value="fn_list"/>
+			<item value="fn_ajax_list"/>
 			<item value="삼성전자"/>
 			<item value="LANGUAGE_CODE = &apos;ko-kr&apos;"/>
 			<item value="LANGUAGE_CODE"/>
@@ -19,10 +23,6 @@
 			<item value="de"/>
 			<item value="HELLO_DJANGO"/>
 			<item value="django"/>
-			<item value="board"/>
-			<item value="append"/>
-			<item value="arr2D"/>
-			<item value="flag"/>
 		</list>
 		<list key="replacehistory">
 			<item value="mem"/>
@@ -36,7 +36,7 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="-217"/>
+		<item key="DIALOG_X_ORIGIN" value="8"/>
 		<item key="DIALOG_Y_ORIGIN" value="381"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>

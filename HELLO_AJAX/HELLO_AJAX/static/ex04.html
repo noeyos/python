@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+#my_div {
+	height: 200px;
+}
+</style>
+<body>
+	ex02
+	<table border="1px">
+		<tr>
+			<td>출력단수</td>
+			<td><select id="my_select">
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="button" value="출력하기"
+				onclick="myclick()"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div id="my_div"></div>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function myclick() {
+			sel = document.querySelector("#my_select")
+			dan = sel.options[sel.selectedIndex].value
+			gugudan = "";
+			
+			for(i=1; i<=9; i++) {
+				gugudan += dan + " × " + i + " = " + (dan * i) + "<br>"
+			}
+
+			document.querySelector("#my_div").innerHTML = gugudan
+
+		}
+	</script>
+</body>
+</html>

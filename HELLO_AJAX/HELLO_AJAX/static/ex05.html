@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<style>
+#it {
+	text-align:right;
+}
+
+table {
+	text-align: center;
+}
+
+.btn {
+	width: 40px;
+}
+
+#callbtn {
+	width: 100px;
+}
+
+input {
+	height:50px;
+	border: none;
+	background: none;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+</style>
+<body>
+	<h2>ex05</h2>
+	<table border="1">
+		<tr>
+			<td colspan="3">
+				<input type="text" id="it" />
+			</td>
+		</tr>
+		<tr>
+			<td><input class="btn" type="button" value="1" onclick="myclick(this)"/></td>
+			<td><input class="btn" type="button" value="2" onclick="myclick(this)"/></td>
+			<td><input class="btn" type="button" value="3" onclick="myclick(this)"/></td>
+		</tr>
+		<tr>
+			<td><input class="btn" type="button" value="4" onclick="myclick(this)"/></td>
+			<td><input class="btn" type="button" value="5" onclick="myclick(this)"/></td>
+			<td><input class="btn" type="button" value="6" onclick="myclick(this)"/></td>
+		</tr>
+		<tr>
+			<td><input class="btn" type="button" value="7" onclick="myclick(this)"/></td>
+			<td><input class="btn" type="button" value="8" onclick="myclick(this)"/></td>
+			<td><input class="btn" type="button" value="9" onclick="myclick(this)"/></td>
+		</tr>
+		<tr>
+			<td><input class="btn" type="button" value="0" onclick="myclick(this)"/></td>
+			<td colspan="2">
+				<input type="button" value="call" id="callbtn" onclick="mycall()">
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+	res = "";
+	
+	function myclick(btn) {
+		var num = btn.value;
+		res = document.querySelector('#it').value += num;
+		console.log("num:"+num);
+		console.log("res:"+res);
+	}
+	
+	function mycall() {
+		alert(res + "에 전화 거는 중...")		
+	}
+	</script>
+</body>
+</html>

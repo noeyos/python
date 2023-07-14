@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+ex02
+<table border="1px">
+	<tr>
+		<td id="my_td1" class="my_td"></td>
+		<td id="my_td2" class="my_td"></td>
+		<td id="my_td3" class="my_td"></td>
+		<td id="my_td4" class="my_td"></td>
+		<td id="my_td5" class="my_td"></td>
+		<td id="my_td6" class="my_td"></td>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<input id="btn" type="button" value="로또생성하기">
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+$('#btn').on('click', function() {
+	arr = [];
+	
+	for (var i = 1; i < 46; i++) {
+		arr.push(i);
+	}
+	
+	shuffle(arr);
+	
+	
+	$("#my_td1").html(arr[0]);
+	$("#my_td2").html(arr[1]);
+	$("#my_td3").html(arr[2]);
+	$("#my_td4").html(arr[3]);
+	$("#my_td5").html(arr[4]);
+	$("#my_td6").html(arr[5]);
+	
+})
+
+function shuffle(array) {
+	  array.sort(() => Math.random() - 0.5);
+	  
+	  return array;
+}
+
+</script>
+</body>
+</html>

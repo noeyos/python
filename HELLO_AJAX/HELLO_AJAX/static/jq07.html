@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<style>
+#it_mine, #it_com, #it_result {
+	width : 40px;
+}
+
+</style>
+<body>
+ex06
+<table border="1">
+	<tr>
+		<td>나:</td>
+		<td>
+			<input type="text" id="it_mine">
+		</td>
+	</tr>
+	<tr>
+		<td>컴:</td>
+		<td>
+			<input type="text" id="it_com">
+		</td>
+	</tr>
+	<tr>
+		<td>결과:</td>
+		<td>
+			<input type="text" id="it_result">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="게임하기" id="btn"/>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+$("#btn").on("click", function() {
+	mine = $("#it_mine").val()
+	console.log(mine)
+	
+	rnd = parseInt((Math.random()*2)+1)
+	console.log(rnd)
+	
+	com = "";
+	if(rnd == 1) {
+		com = "홀"	
+	} else if (rnd == 2) {
+		com = "짝"
+	}
+	console.log(com)
+	
+	result = "";
+	if(mine == com) {
+		result = "WIN"
+	} else if (mine != com) {
+		result = "LOSE"
+	}
+	console.log(result)
+	
+	$("#it_com").val(com);
+	$("#it_result").val(result);
+})
+</script>
+</body>
+</html>

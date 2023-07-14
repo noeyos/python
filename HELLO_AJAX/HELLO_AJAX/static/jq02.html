@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+ex02
+<input class="it" type="text" value="100" />
+<input id="btn" type="button" value="double"/>
+<script type="text/javascript">
+$("#btn").on('click', function(){
+	num = $('.it').val()
+	console.log(num)
+	res = num * 2
+	$(".it").val(res)
+})
+</script>
+</body>
+</html>

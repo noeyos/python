@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+#it {
+	width : 40px;
+}
+
+#my_div {
+	height: 300px;
+}
+
+</style>
+<body>
+ex07
+<table border="1">
+	<tr>
+		<td>스트라이크</td>
+		<td>
+			<input type="text" id="it">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="맞춰보기" onclick="myclick()">
+		</td>
+	</tr>
+	<tr>
+		<td coslpan="2">
+			<div id="my_div"></div>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+	var num1 = parseInt((Math.random()*9)+1)
+	var num2 = parseInt((Math.random()*9)+1)
+	var num3 = parseInt((Math.random()*9)+1)
+	console.log(num1+""+num2+""+num3)
+	
+function myclick() {
+	
+	mine = document.querySelector("#it").value
+	console.log(mine)
+
+	s = 0;
+	b = 0;
+	console.log(mine.charAt(0));
+	
+	
+	if(num1 == mine.charAt(0)) {
+		s += 1;
+	}
+	if(num2 == mine.charAt(1)) {
+		s += 1;
+	}
+	if(num3 == mine.charAt(2)) {
+		s += 1;
+	}
+	
+	
+	if((num1 == mine.charAt(1)) || (num1 == mine.charAt(2))) {
+		b += 1;
+	}
+	if((num2 == mine.charAt(0)) || (num2 == mine.charAt(2))) {
+		b += 1;
+	}
+	if((num3 == mine.charAt(0)) || (num3 == mine.charAt(1))) {
+		b += 1;
+	}
+	
+	res = mine + "s" + s + "b" + b + "<br>"
+	console.log(res)
+	
+	document.querySelector("#my_div").innerHTML += res
+	
+	if(s==3) {
+		setTimeout(function() {
+			alert("스트라이크!!!")
+		}, 100);
+	}
+	
+}
+    
+</script>
+</body>
+</html>

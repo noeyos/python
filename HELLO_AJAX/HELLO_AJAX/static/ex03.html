@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ex02
+<table border="1px">
+	<tr>
+		<td class="my_td"></td>
+		<td class="my_td"></td>
+		<td class="my_td"></td>
+		<td class="my_td"></td>
+		<td class="my_td"></td>
+		<td class="my_td"></td>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<input type="button" value="로또생성하기" onclick="myclick()">
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+function shuffle(array) {
+	  array.sort(() => Math.random() - 0.5);
+	  
+	  return array;
+	}
+
+function myclick() {
+	
+	arr = [];
+	
+	for (var i = 1; i < 46; i++) {
+		arr.push(i);
+	}
+	
+	shuffle(arr);
+	
+	var num1 = document.querySelectorAll(".my_td")[0];
+	var num2 = document.querySelectorAll(".my_td")[1];
+	var num3 = document.querySelectorAll(".my_td")[2];
+	var num4 = document.querySelectorAll(".my_td")[3];
+	var num5 = document.querySelectorAll(".my_td")[4];
+	var num6 = document.querySelectorAll(".my_td")[5];
+	
+	num1.innerHTML = arr[0];
+	num2.innerHTML = arr[1];
+	num3.innerHTML = arr[2];
+	num4.innerHTML = arr[3];
+	num5.innerHTML = arr[4];
+	num6.innerHTML = arr[5];
+}
+</script>
+</body>
+</html>

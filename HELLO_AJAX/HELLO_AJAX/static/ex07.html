@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+#it_mine, #it_com, #it_result {
+	width : 40px;
+}
+
+</style>
+<body>
+ex06
+<table border="1">
+	<tr>
+		<td>나:</td>
+		<td>
+			<input type="text" id="it_mine">
+		</td>
+	</tr>
+	<tr>
+		<td>컴:</td>
+		<td>
+			<input type="text" id="it_com">
+		</td>
+	</tr>
+	<tr>
+		<td>결과:</td>
+		<td>
+			<input type="text" id="it_result">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="게임하기" onclick="myclick()" />
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+function myclick() {
+	mine = document.querySelector("#it_mine").value
+	
+	rnd = parseInt((Math.random()*2)+1)
+	console.log(rnd)
+	
+	com = "";
+	if(rnd == 1) {
+		com += "홀"	
+	} else if (rnd == 2) {
+		com += "짝"
+	}
+	console.log(com)
+	
+	result = "";
+	if(mine == com) {
+		result += "WIN"
+	} else {
+		result += "LOSE"
+	}
+	
+	document.querySelector("#it_com").value = com
+	document.querySelector("#it_result").value = result
+}
+    
+</script>
+</body>
+</html>

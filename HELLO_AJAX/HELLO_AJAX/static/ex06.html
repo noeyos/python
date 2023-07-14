@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+input[name="it_first"] {
+	width : 40px;
+}
+input[name="it_last"] {
+	width : 40px;
+}
+#ta {
+	height : 200px;
+}
+
+</style>
+<body>
+ex06
+<table border="1">
+	<tr>
+		<td>시작별수:</td>
+		<td>
+			<input type="text" name="it_first" id="first">
+		</td>
+	</tr>
+	<tr>
+		<td>끝별수:</td>
+		<td>
+			<input type="text" name="it_last" id="last">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="별출력하기" onclick="myclick()">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<textarea id="ta"></textarea>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+function myclick() {
+	first = parseInt(document.querySelector('#first').value)
+	console.log("first : "+first)
+	last = parseInt(document.querySelector('#last').value)
+	console.log("last : "+last)
+	
+	stars = "";
+	
+	for(i=first; i<=last; i++) {
+		stars += '*'.repeat(i) + "\n"
+		console.log(stars)
+	}
+	
+	document.querySelector('#ta').value += stars
+	
+}
+    
+</script>
+</body>
+</html>
